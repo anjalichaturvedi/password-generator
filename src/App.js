@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import {
+  ChakraProvider,
+  Box,
+  Button,
+  Input,
+  Textarea,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  ColorModeScript,
+  useToast,
+  Heading,
+  ColorModeProvider,
+  useColorMode,
+  CSSReset,
+  IconButton,
+} from '@chakra-ui/react';
 import './App.css';
+import ToggleButton from './components/ToggleButton';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import PasswordGenerator from './password'; // Import the PasswordGenerator component
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <ToggleButton />
+      {/* ... (existing code) */}
+      <Box textAlign="center" margin="20px">
+        <Heading as="h1" size="xl" mb="4">
+          Password Generator
+        </Heading>
+
+        {/* Include the PasswordGenerator component */}
+        <PasswordGenerator />
+
+        {/* ... (existing code) */}
+      </Box>
+    </ChakraProvider>
   );
 }
 
